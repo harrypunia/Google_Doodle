@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    background: #222;
+}
+
+.container {
+    position: absolute;
+    background: #151515;
+    width: 500px;
+    height: 200px;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
