@@ -1,22 +1,33 @@
-var Particle = function (x, y, r) {
+var Particle = function (x, y, r, type) {
     this.pos = createVector(x, y);
-    this.vel = createVector(Math.random() / 4 - Math.random() / 8, Math.random() / 4 - Math.random() / 8);
+    this.pPos = createVector(0, 0);
+    this.vel = createVector((Math.random() * 4) - Math.random() / 2, (Math.random() * 4) - Math.random() / 2);
     this.acc = createVector(0, 0);
     this.r = r;
+    this.inc = true;
     this.mass = this.r * 2;
+    let a = 0;
 
     this.init = () => {
-        fill(255, 255, 255, 60);
+        if (type == 'real') {
+            fill(255, 255, 255, 60);
+        } else {
+            fill(255, 255, 255, 20);
+        }
         noStroke();
         ellipse(this.pos.x, this.pos.y, this.r * 2, this.r * 2);
     }
-
+    this.bosson = function () {
+        stroke(255, 10, 10, 90);
+        ellipse(this.pPos.x, this.pPos.y, this.r / 2, this.r / 2);
+    }
     this.update = () => {
         this.boundry();
-
         this.pos.add(this.vel);
+        this.pPos.add(this.vel);
         this.vel.add(this.acc);
         this.acc.mult(0);
+        this.wave();
     }
 
     this.applyForce = (force) => {
@@ -27,6 +38,23 @@ var Particle = function (x, y, r) {
         this.pos.x < this.r ? (this.pos.x = this.r, this.vel.x *= -1) : this.pos.x > (doodle.offsetWidth - this.r) ? (this.pos.x = (doodle.offsetWidth - this.r), this.vel.x *= -1) : 0;
         this.pos.y < this.r ? (this.pos.y = this.r, this.vel.y *= -1) : this.pos.y > (doodle.offsetHeight - this.r) ? (this.pos.y = (doodle.offsetHeight - this.r), this.vel.y *= -1) : 0;
     }
-
-    this.gravity = function (o) {}
+    this.wave = function () {
+        let intensity = 10,
+            frequency;
+        if (a <= 0) {
+            this.inc = true;
+        } else if (a >= 10) {
+            this.inc = false;
+        }
+        if (this.inc == true) {
+            a += .1;
+        } else if (this.inc == false) {
+            a -= .1;
+        }
+        let waveX = intensity * Math.sin(a),
+            waveY = intensity * Math.cos(a),
+            transverse = createVector(waveX, waveY);
+        this.pPos = this.pos.copy();
+        this.pPos.add(transverse);
+    }
 }
