@@ -4,9 +4,8 @@ var Particle = function (x, y, r, type) {
     this.vel = createVector((Math.random() * 4) - Math.random() / 2, (Math.random() * 4) - Math.random() / 2);
     this.acc = createVector(0, 0);
     this.r = r;
-    this.inc = true;
     this.mass = this.r * 2;
-    let a = 0;
+    let angle = 0;
 
     this.init = () => {
         if (type == 'real') {
@@ -40,19 +39,10 @@ var Particle = function (x, y, r, type) {
     }
     this.wave = function () {
         let intensity = 10,
-            frequency;
-        if (a <= 0) {
-            this.inc = true;
-        } else if (a >= 10) {
-            this.inc = false;
-        }
-        if (this.inc == true) {
-            a += .1;
-        } else if (this.inc == false) {
-            a -= .1;
-        }
-        let waveX = intensity * Math.sin(a),
-            waveY = intensity * Math.cos(a),
+            freq = .1;
+        angle += freq;
+        let waveX = intensity * Math.sin(angle),
+            waveY = intensity * Math.cos(angle),
             transverse = createVector(waveX, waveY);
         this.pPos = this.pos.copy();
         this.pPos.add(transverse);
