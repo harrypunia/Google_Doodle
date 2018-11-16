@@ -9,7 +9,7 @@ var Particle = function (x, y, r, type) {
 
     this.init = () => {
         if (type == 'real') {
-            fill(255, 255, 255, 60);
+            fill(200, 200, 155, 60);
         } else {
             fill(255, 255, 255, 20);
         }
@@ -21,7 +21,7 @@ var Particle = function (x, y, r, type) {
         ellipse(this.pPos.x, this.pPos.y, this.r / 2, this.r / 2);
     }
     this.update = () => {
-        this.boundry();
+        this.boundryOpen();
         this.pos.add(this.vel);
         this.pPos.add(this.vel);
         this.vel.add(this.acc);
@@ -32,13 +32,16 @@ var Particle = function (x, y, r, type) {
     this.applyForce = (force) => {
         this.acc.add(force);
     }
-
     this.boundry = function () {
         this.pos.x < this.r ? (this.pos.x = this.r, this.vel.x *= -1) : this.pos.x > (doodle.offsetWidth - this.r) ? (this.pos.x = (doodle.offsetWidth - this.r), this.vel.x *= -1) : 0;
         this.pos.y < this.r ? (this.pos.y = this.r, this.vel.y *= -1) : this.pos.y > (doodle.offsetHeight - this.r) ? (this.pos.y = (doodle.offsetHeight - this.r), this.vel.y *= -1) : 0;
     }
+    this.boundryOpen = function () {
+        this.pos.x < this.r ? this.pos.x = (doodle.offsetWidth - this.r) : this.pos.x > (doodle.offsetWidth - this.r) ? this.pos.x = this.r : 0;
+        this.pos.y < this.r ? this.pos.y = (doodle.offsetWidth - this.r) : this.pos.y > (doodle.offsetHeight - this.r) ? this.pos.y = this.r : 0;
+    }
     this.wave = function () {
-        let intensity = 10,
+        let intensity = 20,
             freq = .1;
         angle += freq;
         let waveX = intensity * Math.sin(angle),
