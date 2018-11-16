@@ -2,8 +2,8 @@ var doodle = document.getElementsByClassName('doodle')[0],
     p = [],
     dummyP = [],
     higgs = [],
-    population = 12,
-    radius = 5,
+    population = 20,
+    radius = 4,
     timer = 0;
 
 function setup() {
@@ -13,17 +13,17 @@ function setup() {
         let h = new Higgs(5);
         higgs.push(h);
         for (let i = 0; i < population; i++) {
-            p[i] = new Particle(Math.random() * doodle.offsetWidth, Math.random() * doodle.offsetHeight, radius, 'real');
+            p[i] = new Particle(doodle.offsetWidth / 2, doodle.offsetHeight / 2, radius, 'real');
         }
-        for (let i = 0; i < population * 100; i++) {
-            dummyP[i] = new Particle(Math.random() * doodle.offsetWidth, Math.random() * doodle.offsetHeight, radius / 3, 'dummy');
+        for (let i = 0; i < population; i++) {
+            dummyP[i] = new Particle(doodle.offsetWidth / 2, doodle.offsetHeight / 2, radius / 2, 'dummy');
         }
     }, 1000);
 }
 
 function draw() {
     angleMode(DEGREES);
-    background(0, 0, 0, 20);
+    background(0, 0, 0, 10);
     for (let i = 0; i < p.length; i++) {
         p[i].update();
         p[i].init();

@@ -1,7 +1,7 @@
 var Particle = function (x, y, r, type) {
     this.pos = createVector(x, y);
     this.pPos = createVector(0, 0);
-    this.vel = createVector((Math.random() * 4) - Math.random() / 2, (Math.random() * 4) - Math.random() / 2);
+    this.vel = createVector((Math.random() * 4) - (Math.random() * 4), (Math.random() * 4) - (Math.random() * 4));
     this.acc = createVector(0, 0);
     this.r = r;
     this.mass = this.r * 2;
@@ -9,9 +9,9 @@ var Particle = function (x, y, r, type) {
 
     this.init = () => {
         if (type == 'real') {
-            fill(200, 200, 155, 60);
+            fill(255, 105, 185, 60);
         } else {
-            fill(255, 255, 255, 20);
+            fill(255, 255, 255, 10);
         }
         noStroke();
         ellipse(this.pos.x, this.pos.y, this.r * 2, this.r * 2);
@@ -38,7 +38,7 @@ var Particle = function (x, y, r, type) {
     }
     this.boundryOpen = function () {
         this.pos.x < this.r ? this.pos.x = (doodle.offsetWidth - this.r) : this.pos.x > (doodle.offsetWidth - this.r) ? this.pos.x = this.r : 0;
-        this.pos.y < this.r ? this.pos.y = (doodle.offsetWidth - this.r) : this.pos.y > (doodle.offsetHeight - this.r) ? this.pos.y = this.r : 0;
+        this.pos.y < this.r ? this.pos.y = (doodle.offsetHeight - this.r) : this.pos.y > (doodle.offsetHeight - this.r) ? this.pos.y = this.r : 0;
     }
     this.wave = function () {
         let intensity = 20,
