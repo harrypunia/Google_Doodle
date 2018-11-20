@@ -8,13 +8,14 @@ var Particle = function (x, y, r) {
     let angle = 0;
 
     this.init = () => {
-        fill(255, 105, 185, 60);
         noStroke();
-        point(this.pos.x, this.pos.y, this.r * 2, this.r * 2);
+        ellipse(this.pos.x, this.pos.y, this.r * 2, this.r * 2);
     }
     this.bosson = function () {
         stroke(255, 10, 10, 90);
+        noFill();
         ellipse(this.pPos.x, this.pPos.y, this.r / 2, this.r / 2);
+        this.wave();
     }
     this.update = () => {
         this.boundryOpen();
@@ -22,7 +23,6 @@ var Particle = function (x, y, r) {
         this.pPos.add(this.vel);
         this.vel.add(this.acc);
         this.acc.mult(0);
-        this.wave();
     }
 
     this.applyForce = (force) => {
