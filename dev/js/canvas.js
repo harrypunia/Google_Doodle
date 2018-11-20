@@ -7,15 +7,15 @@ var doodle = document.getElementsByClassName('doodle')[0],
     pE = [],
     particles,
     higgs = [],
-    radius = 4,
+    radius = 5,
     text,
     explode = false,
-    pointsG,
-    pointsO,
-    pointsO2,
-    pointsG2,
-    pointsL,
-    pointsE;
+    pointsG = [],
+    pointsO = [],
+    pointsO2 = [],
+    pointsG2 = [],
+    pointsL = [],
+    pointsE = [];
 
 function preload() {
     text = loadFont("../assets/Raleway/Raleway-Thin.ttf");
@@ -36,20 +36,20 @@ function setup() {
     for (let i = 0; i < pointsG.length; i++) {
         pG[i] = new Particle(pointsG[i].x, pointsG[i].y, radius);
     }
-    for (let i = 0; i < pointsO.length; i++) {
-        pO[i] = new Particle(pointsO[i].x, pointsO[i].y, radius);
+    for (let j = 0; j < pointsO.length; j++) {
+        pO[j] = new Particle(pointsO[j].x, pointsO[j].y, radius);
     }
-    for (let i = 0; i < pointsO2.length; i++) {
-        pO2[i] = new Particle(pointsO2[i].x, pointsO2[i].y, radius);
+    for (let k = 0; k < pointsO2.length; k++) {
+        pO2[k] = new Particle(pointsO2[k].x, pointsO2[k].y, radius);
     }
-    for (let i = 0; i < pointsG2.length; i++) {
-        pG2[i] = new Particle(pointsG2[i].x, pointsG2[i].y, radius);
+    for (let l = 0; l < pointsG2.length; l++) {
+        pG2[l] = new Particle(pointsG2[l].x, pointsG2[l].y, radius);
     }
-    for (let i = 0; i < pointsL.length; i++) {
-        pL[i] = new Particle(pointsL[i].x, pointsL[i].y, radius);
+    for (let m = 0; m < pointsL.length; m++) {
+        pL[m] = new Particle(pointsL[m].x, pointsL[m].y, radius);
     }
-    for (let i = 0; i < pointsE.length; i++) {
-        pE[i] = new Particle(pointsE[i].x, pointsE[i].y, radius);
+    for (let n = 0; n < pointsE.length; n++) {
+        pE[n] = new Particle(pointsE[n].x, pointsE[n].y, radius);
     }
 }
 
@@ -57,42 +57,65 @@ function draw() {
     strokeWeight(1);
     angleMode(DEGREES);
     background(0, 0, 0, 10);
-    fill(66, 133, 244, 60);
-    for (let i in pG) {
+    for (let i = 0; i < pointsG.length; i++) {
+        fill(66, 133, 244, 60);
+        noStroke();
         pG[i].init();
         pG[i].bosson();
     }
-    fill(219, 68, 55, 60);
-    for (let i in pO) {
-        pO[i].init();
-        pO[i].bosson();
+    for (let j = 0; j < pO.length; j++) {
+        fill(219, 68, 55, 60);
+        noStroke();
+        pO[j].init();
+        pO[j].bosson();
     }
-    fill(244, 160, 0, 60);
-    for (let i in pO2) {
-        pO2[i].init();
-        pO2[i].bosson();
+    for (let k = 0; k < pO2.length; k++) {
+        fill(244, 160, 0, 60);
+        noStroke();
+        pO2[k].init();
+        pO2[k].bosson();
     }
-    fill(255, 105, 185, 60);
-    for (let i in pG2) {
-        pG2[i].init();
-        pG2[i].bosson();
+    for (let l = 0; l < pG2.length; l++) {
+        fill(255, 105, 185, 60);
+        noStroke();
+        pG2[l].init();
+        pG2[l].bosson();
     }
-    fill(15, 157, 88, 60);
-    for (let i in pL) {
-        pL[i].init();
-        pL[i].bosson();
+    for (let m = 0; m < pL.length; m++) {
+        fill(15, 157, 88, 60);
+        noStroke();
+        pL[m].init();
+        pL[m].bosson();
     }
-    fill(244, 160, 0, 60);
-    for (let i in pE) {
-        pE[i].init();
-        pE[i].bosson();
+    for (let n = 0; n < pE.length; n++) {
+        fill(244, 160, 0, 60);
+        noStroke();
+        pE[n].init();
+        pE[n].bosson();
     }
 
     if (explode) {
         for (let i in pG) {
             pG[i].update();
         }
+        for (let i in pO) {
+            pO[i].update();
+        }
+        for (let i in pO2) {
+            pO2[i].update();
+        }
+        for (let i in pG2) {
+            pG2[i].update();
+        }
+        for (let i in pL) {
+            pL[i].update();
+        }
+        for (let i in pE) {
+            pE[i].update();
+        }
     }
+    noFill();
+    stroke(255);
     for (let i = 0; i < higgs.length; i++) {
         higgs[i].show(mouseX, mouseY);
         higgs[i].expand(0.5, 30);

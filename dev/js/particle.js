@@ -2,13 +2,13 @@ var Particle = function (x, y, r) {
     this.pos = createVector(x, y);
     this.pPos = createVector(0, 0);
     this.vel = createVector((Math.random()) - (Math.random()), (Math.random()) - (Math.random()));
+    this.oscilate = p5.randomVector2D();
     this.acc = createVector(0, 0);
     this.r = r;
     this.mass = this.r * 2;
     let angle = 0;
 
     this.init = () => {
-        noStroke();
         ellipse(this.pos.x, this.pos.y, this.r * 2, this.r * 2);
     }
     this.bosson = function () {

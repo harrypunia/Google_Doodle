@@ -6,8 +6,6 @@ var Higgs = function (r) {
 
     this.show = function (x, y) {
         ellipseMode(CENTER);
-        noFill();
-        stroke(255, 255, 255, 100);
         ellipse(x, y, this.r * 2, this.r * 2);
     }
     this.expand = function (rate, max) {
