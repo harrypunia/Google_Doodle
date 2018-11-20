@@ -1,20 +1,16 @@
-var Particle = function (x, y, r, type) {
+var Particle = function (x, y, r) {
     this.pos = createVector(x, y);
     this.pPos = createVector(0, 0);
-    this.vel = createVector((Math.random() * 4) - (Math.random() * 4), (Math.random() * 4) - (Math.random() * 4));
+    this.vel = createVector((Math.random()) - (Math.random()), (Math.random()) - (Math.random()));
     this.acc = createVector(0, 0);
     this.r = r;
     this.mass = this.r * 2;
     let angle = 0;
 
     this.init = () => {
-        if (type == 'real') {
-            fill(255, 105, 185, 60);
-        } else {
-            fill(255, 255, 255, 10);
-        }
+        fill(255, 105, 185, 60);
         noStroke();
-        ellipse(this.pos.x, this.pos.y, this.r * 2, this.r * 2);
+        point(this.pos.x, this.pos.y, this.r * 2, this.r * 2);
     }
     this.bosson = function () {
         stroke(255, 10, 10, 90);
