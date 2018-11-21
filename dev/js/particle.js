@@ -13,8 +13,8 @@ var Particle = function (x, y, r) {
         ellipse(this.pos.x, this.pos.y, this.r * 2, this.r * 2);
     }
     this.bosson = function () {
-        stroke(255, 10, 10, 90);
-        noFill();
+        fill(255, 24, 24, 90);
+        noStroke();
         ellipse(this.pPos.x, this.pPos.y, this.r / 2, this.r / 2);
         this.wave();
     }
@@ -57,7 +57,7 @@ var Particle = function (x, y, r) {
     }
     this.wave = function () {
         let intensity = 20,
-            freq = .1;
+            freq = .07;
         angle += freq;
         let waveX = intensity * Math.sin(angle),
             waveY = intensity * Math.cos(angle),

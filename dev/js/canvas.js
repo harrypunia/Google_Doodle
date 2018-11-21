@@ -18,7 +18,7 @@ var doodle = document.getElementsByClassName('doodle')[0],
     pointsE = [];
 
 function preload() {
-    text = loadFont("../assets/Raleway/Raleway-Thin.ttf");
+    text = loadFont("../assets/Google/Google_Sans.otf");
 }
 
 function setup() {
@@ -26,11 +26,11 @@ function setup() {
     canvas.parent(doodle);
     textLeading(.2);
     pointsG = text.textToPoints('G', 250, 350, 250);
-    pointsO = text.textToPoints('o', 430, 350, 250);
-    pointsO2 = text.textToPoints('o', 580, 350, 250);
-    pointsG2 = text.textToPoints('g', 720, 350, 250);
-    pointsL = text.textToPoints('l', 870, 350, 250);
-    pointsE = text.textToPoints('e', 930, 350, 250);
+    pointsO = text.textToPoints('o', 450, 350, 250);
+    pointsO2 = text.textToPoints('o', 600, 350, 250);
+    pointsG2 = text.textToPoints('g', 750, 350, 250);
+    pointsL = text.textToPoints('l', 900, 350, 250);
+    pointsE = text.textToPoints('e', 950, 350, 250);
     let h = new Higgs(5);
     higgs.push(h);
     for (let i = 0; i < pointsG.length; i++) {
@@ -58,7 +58,7 @@ function draw() {
     angleMode(DEGREES);
     background(0, 0, 0, 10);
     for (let i = 0; i < pointsG.length; i++) {
-        fill(66, 133, 244, 60);
+        fill(66, 133, 244, 100);
         noStroke();
         pG[i].init();
         pG[i].bosson();
@@ -69,7 +69,7 @@ function draw() {
         }
     }
     for (let i = 0; i < pO.length; i++) {
-        fill(219, 68, 55, 60);
+        fill(219, 68, 55, 100);
         noStroke();
         pO[i].init();
         pO[i].bosson();
@@ -80,7 +80,7 @@ function draw() {
         }
     }
     for (let i = 0; i < pO2.length; i++) {
-        fill(244, 160, 0, 60);
+        fill(244, 160, 0, 100);
         noStroke();
         pO2[i].init();
         pO2[i].bosson();
@@ -91,7 +91,7 @@ function draw() {
         }
     }
     for (let i = 0; i < pG2.length; i++) {
-        fill(255, 105, 185, 60);
+        fill(66, 133, 244, 100);
         noStroke();
         pG2[i].init();
         pG2[i].bosson();
@@ -102,7 +102,7 @@ function draw() {
         }
     }
     for (let i = 0; i < pL.length; i++) {
-        fill(15, 157, 88, 60);
+        fill(15, 157, 88, 100);
         noStroke();
         pL[i].init();
         pL[i].bosson();
@@ -113,7 +113,7 @@ function draw() {
         }
     }
     for (let i = 0; i < pE.length; i++) {
-        fill(244, 160, 0, 60);
+        fill(219, 68, 55, 100);
         noStroke();
         pE[i].init();
         pE[i].bosson();
@@ -144,9 +144,9 @@ function draw() {
             pE[i].update();
         }
     }
-    noStroke();
-    fill(255, 50);
     for (let i = 0; i < higgs.length; i++) {
+        noStroke();
+        fill(255, 50);
         higgs[i].show(mouseX, mouseY);
         higgs[i].expand(0.5, 30);
     }
