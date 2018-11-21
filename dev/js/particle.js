@@ -2,7 +2,7 @@ var Particle = function (x, y, r) {
     this.pos = createVector(x, y);
     this.pPos = createVector(0, 0);
     this.vel = createVector((Math.random()) - (Math.random()), (Math.random()) - (Math.random()));
-    this.oscilate = p5.randomVector2D();
+    this.oscilatePower = createVector(Math.random(), Math.random());
     this.acc = createVector(0, 0);
     this.r = r;
     this.mass = this.r * 2;
@@ -24,7 +24,16 @@ var Particle = function (x, y, r) {
         this.vel.add(this.acc);
         this.acc.mult(0);
     }
-
+    this.resetPos = (x, y) => {
+        let gravity = createVector(x, y);
+        this.pos.add(gravity);
+    }
+    this.enter = field => {
+        let gap = this.r + field.r,
+            xIntersect = this.pos.x - field.x < gap,
+            yIntersect = this.pos.y - field.y < gap;
+        (xIntersect && yIntersect) ? console.log(gap): 0;
+    }
     this.applyForce = (force) => {
         this.acc.add(force);
     }

@@ -63,35 +63,40 @@ function draw() {
         pG[i].init();
         pG[i].bosson();
     }
-    for (let j = 0; j < pO.length; j++) {
+    for (let i = 0; i < pO.length; i++) {
         fill(219, 68, 55, 60);
         noStroke();
-        pO[j].init();
-        pO[j].bosson();
+        pO[i].init();
+        pO[i].bosson();
     }
-    for (let k = 0; k < pO2.length; k++) {
+    for (let i = 0; i < pO2.length; i++) {
         fill(244, 160, 0, 60);
         noStroke();
-        pO2[k].init();
-        pO2[k].bosson();
+        pO2[i].init();
+        pO2[i].bosson();
     }
-    for (let l = 0; l < pG2.length; l++) {
+    for (let i = 0; i < pG2.length; i++) {
         fill(255, 105, 185, 60);
         noStroke();
-        pG2[l].init();
-        pG2[l].bosson();
+        pG2[i].init();
+        pG2[i].bosson();
     }
-    for (let m = 0; m < pL.length; m++) {
+    for (let i = 0; i < pL.length; i++) {
         fill(15, 157, 88, 60);
         noStroke();
-        pL[m].init();
-        pL[m].bosson();
+        pL[i].init();
+        pL[i].bosson();
+        for (let j = 0; j < higgs.length; j++) {
+            if (pL[i].enter(higgs[j])) {
+                pL[i].resetPos(pointsL[i].x, pointsL[i].y);
+            };
+        }
     }
-    for (let n = 0; n < pE.length; n++) {
+    for (let i = 0; i < pE.length; i++) {
         fill(244, 160, 0, 60);
         noStroke();
-        pE[n].init();
-        pE[n].bosson();
+        pE[i].init();
+        pE[i].bosson();
     }
 
     if (explode) {

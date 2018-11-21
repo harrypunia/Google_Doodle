@@ -3,8 +3,12 @@ var Higgs = function (r) {
     this.initR = this.r;
     this.alive = true;
     this.opacity = 100;
+    this.x;
+    this.y;
 
     this.show = function (x, y) {
+        this.x = x;
+        this.y = y;
         ellipseMode(CENTER);
         ellipse(x, y, this.r * 2, this.r * 2);
     }
