@@ -1,6 +1,8 @@
-body {
+body,
+html {
     margin: 0;
     background: #222;
+    cursor: pointer;
 }
 
 .doodle {

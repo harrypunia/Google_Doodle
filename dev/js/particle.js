@@ -6,6 +6,7 @@ var Particle = function (x, y, r) {
     this.acc = createVector(0, 0);
     this.r = r;
     this.mass = this.r * 2;
+    this.hold = false;
     let angle = 0;
 
     this.init = () => {
@@ -18,24 +19,33 @@ var Particle = function (x, y, r) {
         this.wave();
     }
     this.update = () => {
-        this.boundryOpen();
-        this.pos.add(this.vel);
-        this.pPos.add(this.vel);
-        this.vel.add(this.acc);
-        this.acc.mult(0);
+        if (!this.hold) {
+            this.boundryOpen();
+            this.pos.add(this.vel);
+            this.pPos.add(this.vel);
+            this.vel.add(this.acc);
+            this.acc.mult(0);
+        }
     }
     this.resetPos = (x, y) => {
         let gravity = createVector(x, y);
-        this.pos.add(gravity);
+        this.pos.x = gravity.x;
+        this.pos.y = gravity.y;
+        this.hold = true;
     }
     this.enter = field => {
         let gap = this.r + field.r,
-            xIntersect = this.pos.x - field.x < gap,
-            yIntersect = this.pos.y - field.y < gap;
-        (xIntersect && yIntersect) ? console.log(gap): 0;
+            xIntersect = this.pos.x - field.x < gap && this.pos.x - field.x > (-gap),
+            yIntersect = this.pos.y - field.y < gap && this.pos.y - field.y > (-gap);
+        if (xIntersect && yIntersect) {
+            return true;
+        } else {
+            return false;
+        }
     }
     this.applyForce = (force) => {
-        this.acc.add(force);
+        console.log('working');
+        this.position.add(this.oscilatePower);
     }
     this.boundry = function () {
         this.pos.x < this.r ? (this.pos.x = this.r, this.vel.x *= -1) : this.pos.x > (doodle.offsetWidth - this.r) ? (this.pos.x = (doodle.offsetWidth - this.r), this.vel.x *= -1) : 0;

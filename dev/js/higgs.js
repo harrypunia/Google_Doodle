@@ -14,7 +14,6 @@ var Higgs = function (r) {
     }
     this.expand = function (rate, max) {
         if (this.r < max) {
-            stroke(255, 255, 255, this.opacity)
             this.opacity -= 2;
             this.r += rate;
         } else {
