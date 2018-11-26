@@ -7,7 +7,7 @@ var doodle = document.getElementsByClassName('doodle')[0],
     pE = [],
     particles,
     higgs = [],
-    radius = 5,
+    radius = 3,
     text,
     explode = false,
     pointsG = [],
@@ -25,13 +25,13 @@ function setup() {
     var canvas = createCanvas(1000, 400);
     canvas.parent(doodle);
     textLeading(.2);
-    pointsG = text.textToPoints('Google', 150, 270, 200);
-    pointsO = text.textToPoints('', 450, 270, 200);
-    pointsO2 = text.textToPoints('', 600, 270, 200);
-    pointsG2 = text.textToPoints('', 750, 270, 200);
-    pointsL = text.textToPoints('', 900, 270, 200);
-    pointsE = text.textToPoints('', 950, 270, 200);
-    let h = new Higgs(50);
+    pointsG = text.textToPoints('G', 150, 270, 200);
+    pointsO = text.textToPoints('o', 311, 270, 200);
+    pointsO2 = text.textToPoints('o', 431, 270, 200);
+    pointsG2 = text.textToPoints('g', 551, 270, 200);
+    pointsL = text.textToPoints('l', 671, 270, 200);
+    pointsE = text.textToPoints('e', 711, 270, 200);
+    let h = new Higgs(30);
     higgs.push(h);
     for (let i = 0; i < pointsG.length; i++) {
         pG[i] = new Particle(pointsG[i].x, pointsG[i].y, radius);
@@ -151,6 +151,8 @@ function draw() {
     }
 }
 
-function mousePressed() {
-    explode = true;
-}
+doodle.addEventListener("mousedown", () => explode = true);
+
+//function mousePressed() {
+//    explode = true;
+//}

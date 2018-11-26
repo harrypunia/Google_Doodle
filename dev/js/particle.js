@@ -56,7 +56,7 @@ var Particle = function (x, y, r) {
         this.pos.y < this.r ? this.pos.y = (doodle.offsetHeight - this.r) : this.pos.y > (doodle.offsetHeight - this.r) ? this.pos.y = this.r : 0;
     }
     this.wave = function () {
-        let intensity = 20,
+        let intensity = 15,
             freq = .07;
         angle += freq;
         let waveX = intensity * Math.sin(angle),

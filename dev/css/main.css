@@ -2,7 +2,6 @@ body,
 html {
     margin: 0;
     background: #fff;
-    cursor: pointer;
 }
 
 .doodle {
@@ -15,3 +14,11 @@ html {
     transform: translate(-50%, -50%);
     overflow: hidden;
 }
+
+.higgsField {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+}
+
+.higgsField img {}
