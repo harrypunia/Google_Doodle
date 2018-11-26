@@ -22,16 +22,16 @@ function preload() {
 }
 
 function setup() {
-    var canvas = createCanvas(1500, 600);
+    var canvas = createCanvas(1000, 400);
     canvas.parent(doodle);
     textLeading(.2);
-    pointsG = text.textToPoints('G', 250, 350, 250);
-    pointsO = text.textToPoints('o', 450, 350, 250);
-    pointsO2 = text.textToPoints('o', 600, 350, 250);
-    pointsG2 = text.textToPoints('g', 750, 350, 250);
-    pointsL = text.textToPoints('l', 900, 350, 250);
-    pointsE = text.textToPoints('e', 950, 350, 250);
-    let h = new Higgs(5);
+    pointsG = text.textToPoints('Google', 150, 270, 200);
+    pointsO = text.textToPoints('', 450, 270, 200);
+    pointsO2 = text.textToPoints('', 600, 270, 200);
+    pointsG2 = text.textToPoints('', 750, 270, 200);
+    pointsL = text.textToPoints('', 900, 270, 200);
+    pointsE = text.textToPoints('', 950, 270, 200);
+    let h = new Higgs(50);
     higgs.push(h);
     for (let i = 0; i < pointsG.length; i++) {
         pG[i] = new Particle(pointsG[i].x, pointsG[i].y, radius);
@@ -145,10 +145,9 @@ function draw() {
         }
     }
     for (let i = 0; i < higgs.length; i++) {
-        noStroke();
-        fill(255, 50);
+        noFill();
+        stroke(255);
         higgs[i].show(mouseX, mouseY);
-        higgs[i].expand(0.5, 30);
     }
 }
 

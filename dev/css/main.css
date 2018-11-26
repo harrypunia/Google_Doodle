@@ -1,15 +1,15 @@
 body,
 html {
     margin: 0;
-    background: #222;
+    background: #fff;
     cursor: pointer;
 }
 
 .doodle {
     position: absolute;
     background: #151515;
-    width: 1500px;
-    height: 600px;
+    width: 1000px;
+    height: 400px;
     left: 50vw;
     top: 50vh;
     transform: translate(-50%, -50%);
