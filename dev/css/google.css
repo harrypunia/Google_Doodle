@@ -1,0 +1,28 @@
+.google {
+    position: absolute;
+    top: 0;
+    background: black;
+    font-family: 'google sans', sans-serif;
+}
+
+.google__input {
+    position: relative;
+    float: left;
+    width: 700px;
+    height: 44px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
+    padding: 5px 8px;
+    font-size: 17px;
+    border-radius: 2px;
+    background: white;
+    border: 1px solid white;
+}
+
+.google__input:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.google__input:focus {
+    outline: none;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}

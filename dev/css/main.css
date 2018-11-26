@@ -5,12 +5,13 @@ html {
 }
 
 .doodle {
-    position: absolute;
+    position: relative;
+    float: left;
     background: #151515;
     width: 1000px;
     height: 400px;
-    left: 50vw;
-    top: 300px;
+    margin-left: 50vw;
+    margin-top: 300px;
     transform: translate(-50%, -50%);
     overflow: hidden;
 }
@@ -20,7 +21,7 @@ html {
     width: 70px;
     height: 70px;
     transform: translate(-50%, -50%);
-    animation: pulse 2s linear infinite;
+    animation: pulse 10s linear infinite;
 }
 
 .higgsField img {
