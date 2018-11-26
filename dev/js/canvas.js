@@ -1,5 +1,4 @@
-var doodle = document.getElementsByClassName('doodle')[0],
-    pG = [],
+var pG = [],
     pO = [],
     pO2 = [],
     pG2 = [],
