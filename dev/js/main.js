@@ -3,7 +3,7 @@ var doodle = document.getElementsByClassName('doodle')[0]
 
 doodle.addEventListener("mousemove", e => {
     let x = e.clientX - doodle.offsetLeft + (doodle.offsetWidth / 2),
-        y = e.clientY - doodle.offsetTop + (doodle.offsetHeight / 2);
+        y = e.clientY - doodle.offsetTop;
     higgsField.style.left = x + 'px';
     higgsField.style.top = y + 'px';
 })

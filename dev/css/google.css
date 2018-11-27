@@ -1,23 +1,28 @@
 .google {
     position: relative;
-    top: 0;
+    width: auto;
+    height: auto;
+    top: 0px;
+    padding-top: 100px;
     font-family: 'google sans', sans-serif;
 }
 
 .google__search {
     position: relative;
-    float: left;
-    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 766px;
     height: 300px;
-    margin-top: 0px;
+    margin: 40px auto;
 }
 
 .google__input {
     position: relative;
     float: left;
-    width: 700px;
+    width: 750px;
     height: 44px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     padding: 5px 8px;
     font-size: 17px;
     border-radius: 2px;
@@ -26,10 +31,43 @@
 }
 
 .google__input:hover {
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
 }
 
 .google__input:focus {
     outline: none;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+.google__buttons {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.google__enter {
+    font-weight: 800;
+    position: relative;
+    color: #757575;
+    background: #f2f2f2;
+    height: 50px;
+    line-height: 27px;
+    text-align: center;
+    width: 154px;
+    margin: 20px 30px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 5px 0;
+}
+
+a {
+    color: blue !important;
+    text-decoration: none;
 }

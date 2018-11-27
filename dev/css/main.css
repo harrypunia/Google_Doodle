@@ -6,12 +6,11 @@ html {
 
 .doodle {
     position: relative;
-    float: left;
     background: #151515;
     width: 1000px;
     height: 400px;
-    margin: 300px 0 0 50vw;
-    transform: translate(-50%, -50%);
+    margin-left: 50vw;
+    transform: translateX(-50%);
     overflow: hidden;
 }
 

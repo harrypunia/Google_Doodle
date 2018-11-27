@@ -9,8 +9,6 @@ var Higgs = function (r) {
     this.show = function (x, y) {
         this.x = x;
         this.y = y;
-        //ellipseMode(CENTER);
-        //ellipse(x, y, this.r * 2, this.r * 2);
     }
     this.expand = function (rate, max) {
         if (this.r < max) {
