@@ -61,10 +61,12 @@ function draw() {
         noStroke();
         pG[i].init();
         pG[i].bosson();
-        for (let j = 0; j < higgs.length; j++) {
-            if (pG[i].enter(higgs[j])) {
-                pG[i].resetPos(pointsG[i].x, pointsG[i].y);
-            };
+        if (explode) {
+            for (let j = 0; j < higgs.length; j++) {
+                if (pG[i].enter(higgs[j])) {
+                    pG[i].resetPos(pointsG[i].x, pointsG[i].y);
+                };
+            }
         }
     }
     for (let i = 0; i < pO.length; i++) {
@@ -72,10 +74,12 @@ function draw() {
         noStroke();
         pO[i].init();
         pO[i].bosson();
-        for (let j = 0; j < higgs.length; j++) {
-            if (pO[i].enter(higgs[j])) {
-                pO[i].resetPos(pointsO[i].x, pointsO[i].y);
-            };
+        if (explode) {
+            for (let j = 0; j < higgs.length; j++) {
+                if (pO[i].enter(higgs[j])) {
+                    pO[i].resetPos(pointsO[i].x, pointsO[i].y);
+                };
+            }
         }
     }
     for (let i = 0; i < pO2.length; i++) {
@@ -83,10 +87,12 @@ function draw() {
         noStroke();
         pO2[i].init();
         pO2[i].bosson();
-        for (let j = 0; j < higgs.length; j++) {
-            if (pO2[i].enter(higgs[j])) {
-                pO2[i].resetPos(pointsO2[i].x, pointsO2[i].y);
-            };
+        if (explode) {
+            for (let j = 0; j < higgs.length; j++) {
+                if (pO2[i].enter(higgs[j])) {
+                    pO2[i].resetPos(pointsO2[i].x, pointsO2[i].y);
+                };
+            }
         }
     }
     for (let i = 0; i < pG2.length; i++) {
@@ -94,10 +100,12 @@ function draw() {
         noStroke();
         pG2[i].init();
         pG2[i].bosson();
-        for (let j = 0; j < higgs.length; j++) {
-            if (pG2[i].enter(higgs[j])) {
-                pG2[i].resetPos(pointsG2[i].x, pointsG2[i].y);
-            };
+        if (explode) {
+            for (let j = 0; j < higgs.length; j++) {
+                if (pG2[i].enter(higgs[j])) {
+                    pG2[i].resetPos(pointsG2[i].x, pointsG2[i].y);
+                };
+            }
         }
     }
     for (let i = 0; i < pL.length; i++) {
@@ -105,10 +113,12 @@ function draw() {
         noStroke();
         pL[i].init();
         pL[i].bosson();
-        for (let j = 0; j < higgs.length; j++) {
-            if (pL[i].enter(higgs[j])) {
-                pL[i].resetPos(pointsL[i].x, pointsL[i].y);
-            };
+        if (explode) {
+            for (let j = 0; j < higgs.length; j++) {
+                if (pL[i].enter(higgs[j])) {
+                    pL[i].resetPos(pointsL[i].x, pointsL[i].y);
+                };
+            }
         }
     }
     for (let i = 0; i < pE.length; i++) {
@@ -116,10 +126,12 @@ function draw() {
         noStroke();
         pE[i].init();
         pE[i].bosson();
-        for (let j = 0; j < higgs.length; j++) {
-            if (pE[i].enter(higgs[j])) {
-                pE[i].resetPos(pointsE[i].x, pointsE[i].y);
-            };
+        if (explode) {
+            for (let j = 0; j < higgs.length; j++) {
+                if (pE[i].enter(higgs[j])) {
+                    pE[i].resetPos(pointsE[i].x, pointsE[i].y);
+                };
+            }
         }
     }
 
