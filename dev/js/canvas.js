@@ -162,7 +162,11 @@ function draw() {
     }
 }
 
-play.addEventListener("mousedown", () => explode = true);
+play.addEventListener("mousedown", () => {
+    explode = true;
+    legend.classList.remove('legendIn');
+    play.classList.remove('playIn');
+});
 
 //function mousePressed() {
 //    explode = true;
