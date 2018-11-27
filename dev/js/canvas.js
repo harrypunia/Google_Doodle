@@ -150,7 +150,7 @@ function draw() {
     }
 }
 
-doodle.addEventListener("mousedown", () => explode = true);
+play.addEventListener("mousedown", () => explode = true);
 
 //function mousePressed() {
 //    explode = true;

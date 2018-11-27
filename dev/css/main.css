@@ -45,9 +45,13 @@ html {
     width: 600px;
     height: 300px;
     margin-top: 50px;
+    margin-left: -100px;
     background: white;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 35px 35px 0;
+    transform: translate3d(-92%, 0, 0);
     overflow: hidden;
+    z-index: 100;
+    transition: transform .2s ease-in;
 }
 
 .legend__handle {
@@ -55,16 +59,15 @@ html {
     width: 8%;
     height: 100%;
     background: #efefef;
-    cursor: pointer;
     color: #575757;
-    font-size: 2em;
+    font-size: 1.2em;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .legend__handle p {
-    transform: rotate(-90deg);
+    transform: rotate(90deg);
 }
 
 .legend__content {
@@ -72,6 +75,93 @@ html {
     width: 92%;
     height: 100%;
     background: #232333;
+    background-image: url('/assets/SVG/legend_pattern.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.openLegend {
+    transform: translate3d(0, 0, 0) !important;
+    transition: transform .2s ease-out;
+}
+
+.legendIn {
+    animation: legendIn .6s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: .2s;
+}
+
+.play {
+    position: absolute;
+    right: 20%;
+    bottom: 40px;
+    widtH: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: playIn .6s ease-out;
+}
+
+.legend h1 {
+    color: white;
+    font-weight: 800;
+}
+
+.legend__content__info {
+    display: flex;
+    margin: 20px 0;
+    justify-content: flex-start;
+    align-items: center;
+    background: white;
+    width: 250px;
+}
+
+.particle-bosson {
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    background: red;
+
+}
+
+.particle-photon {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: #388bc7;
+    flex-basis: 50%;
+    margin: auto;
+}
+
+.particles-photons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background: blue;
+}
+
+@keyframes playIn {
+    from {
+        bottom: -150px;
+    }
+}
+
+@keyframes legendIn {
+    from {
+        margin-left: -150px;
+    }
+
+    to {
+        margin-left: 0;
+    }
 }
 
 @keyframes pulse {
