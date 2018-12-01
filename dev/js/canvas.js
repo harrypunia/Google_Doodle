@@ -134,7 +134,6 @@ function draw() {
             }
         }
     }
-
     if (explode) {
         for (let i in pG) {
             pG[i].update();
@@ -160,14 +159,17 @@ function draw() {
         stroke(255);
         higgs[i].show(mouseX, mouseY);
     }
+    //console.log(gComp);
 }
+
+const isBack = el => {
+    return el.hold
+}
+
+let gComp = pG.every(isBack);
 
 play.addEventListener("mousedown", () => {
     explode = true;
     legend.classList.remove('legendIn');
     play.classList.remove('playIn');
 });
-
-//function mousePressed() {
-//    explode = true;
-//}

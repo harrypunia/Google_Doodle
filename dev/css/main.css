@@ -105,9 +105,24 @@ html {
     bottom: -150px;
     widtH: 50px;
     height: 50px;
-    background: white;
+    border: 1px solid white;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play img {
+    width: 50%;
+    height: auto;
+    transition: transform .2s ease-in;
+    transform: translateX(2px);
+}
+
+.play:hover img {
+    transform: rotate(-30deg);
+    transition: transform .2s ease-out;
 }
 
 .playIn {
