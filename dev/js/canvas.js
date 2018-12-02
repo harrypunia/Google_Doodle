@@ -56,7 +56,7 @@ function draw() {
     strokeWeight(1);
     angleMode(DEGREES);
     background(0, 0, 0, 10);
-    for (let i = 0; i < pointsG.length; i++) {
+    for (let i = 0; i < pG.length; i++) {
         fill(66, 133, 244, 100);
         noStroke();
         pG[i].init();
@@ -159,14 +159,39 @@ function draw() {
         stroke(255);
         higgs[i].show(mouseX, mouseY);
     }
-    //console.log(gComp);
+    let gComp = pG.every(el => el.hold),
+        oComp = pO.every(el => el.hold),
+        o2Comp = pO2.every(el => el.hold),
+        g2Comp = pG2.every(el => el.hold),
+        lComp = pL.every(el => el.hold),
+        eComp = pE.every(el => el.hold),
+        comp = gComp && oComp && o2Comp && g2Comp && lComp && eComp;
+    comp ? resetSketch() : 0;
 }
 
-const isBack = el => {
-    return el.hold
+const resetSketch = () => {
+    explode = false;
+    legend.classList.add('legendIn');
+    play.classList.add('playIn');
+    for (let i = 0; i < pG.length; i++) {
+        pG[i].resetPhysics();
+    }
+    for (let i = 0; i < pO.length; i++) {
+        pO[i].resetPhysics();
+    }
+    for (let i = 0; i < pO2.length; i++) {
+        pO2[i].resetPhysics();
+    }
+    for (let i = 0; i < pG2.length; i++) {
+        pG2[i].resetPhysics();
+    }
+    for (let i = 0; i < pL.length; i++) {
+        pL[i].resetPhysics();
+    }
+    for (let i = 0; i < pE.length; i++) {
+        pE[i].resetPhysics();
+    }
 }
-
-let gComp = pG.every(isBack);
 
 play.addEventListener("mousedown", () => {
     explode = true;

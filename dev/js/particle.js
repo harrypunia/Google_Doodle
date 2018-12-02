@@ -2,7 +2,6 @@ var Particle = function (x, y, r) {
     this.pos = createVector(x, y);
     this.pPos = createVector(0, 0);
     this.vel = createVector((Math.random()) - (Math.random()), (Math.random()) - (Math.random()));
-    this.oscilatePower = createVector(Math.random(), Math.random());
     this.acc = createVector(0, 0);
     this.r = r;
     this.mass = this.r * 2;
@@ -43,9 +42,8 @@ var Particle = function (x, y, r) {
             return false;
         }
     }
-    this.applyForce = (force) => {
-        console.log('working');
-        this.position.add(this.oscilatePower);
+    this.resetPhysics = () => {
+        this.hold = false;
     }
     this.boundry = function () {
         this.pos.x < this.r ? (this.pos.x = this.r, this.vel.x *= -1) : this.pos.x > (doodle.offsetWidth - this.r) ? (this.pos.x = (doodle.offsetWidth - this.r), this.vel.x *= -1) : 0;
