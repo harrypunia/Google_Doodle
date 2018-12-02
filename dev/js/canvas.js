@@ -174,22 +174,22 @@ const resetSketch = () => {
     legend.classList.add('legendIn');
     play.classList.add('playIn');
     for (let i = 0; i < pG.length; i++) {
-        pG[i].resetPhysics();
+        pG[i].hold = false;
     }
     for (let i = 0; i < pO.length; i++) {
-        pO[i].resetPhysics();
+        pO[i].hold = false;
     }
     for (let i = 0; i < pO2.length; i++) {
-        pO2[i].resetPhysics();
+        pO2[i].hold = false;
     }
     for (let i = 0; i < pG2.length; i++) {
-        pG2[i].resetPhysics();
+        pG2[i].hold = false;
     }
     for (let i = 0; i < pL.length; i++) {
-        pL[i].resetPhysics();
+        pL[i].hold = false;
     }
     for (let i = 0; i < pE.length; i++) {
-        pE[i].resetPhysics();
+        pE[i].hold = false;
     }
 }
 

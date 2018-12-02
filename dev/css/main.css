@@ -143,6 +143,13 @@ html {
     width: 250px;
 }
 
+.legend__graphic {
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .particle-bosson {
     border-radius: 50%;
     width: 5px;
