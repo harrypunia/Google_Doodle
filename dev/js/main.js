@@ -1,6 +1,7 @@
 let higgsField = document.getElementsByClassName('higgsField')[0],
     legend = document.getElementsByClassName('legend')[0],
     play = document.getElementsByClassName('play')[0],
+    banner = document.getElementsByClassName('banner')[0],
     legendOpen = false;
 
 var doodle = document.getElementsByClassName('doodle')[0]

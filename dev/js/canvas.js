@@ -173,6 +173,7 @@ const resetSketch = () => {
     explode = false;
     legend.classList.add('legendIn');
     play.classList.add('playIn');
+    banner.classList.add('bannerIn');
     for (let i = 0; i < pG.length; i++) {
         pG[i].hold = false;
     }
@@ -195,7 +196,8 @@ const resetSketch = () => {
 
 play.addEventListener("mousedown", () => {
     explode = true;
-    play.innerHTML = '<img src="assets/img/SVG/replay.svg" />';
+    play.innerHTML = '<img src="assets/SVG/replay.svg" />';
     legend.classList.remove('legendIn');
     play.classList.remove('playIn');
+    banner.classList.remove('bannerIn');
 });

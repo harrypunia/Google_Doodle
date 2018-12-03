@@ -14,6 +14,41 @@ html {
     overflow: hidden;
 }
 
+.banner {
+    position: absolute;
+    width: 0px;
+    height: 30px;
+    left: 160px;
+    top: 70px;
+    background: white;
+    overflow: hidden;
+    transition: width .8s ease;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.banner:hover {
+    background: transparent;
+    border: 1px solid white;
+}
+
+.bannerIn {
+    width: 320px !important;
+}
+
+.banner a {
+    position: absolute;
+    width: 350px;
+    font-size: 16px;
+    left: 20px;
+    line-height: 30px;
+    color: black;
+}
+
+.banner:hover a {
+    color: white !important;
+}
+
 .higgsField {
     position: absolute;
     width: 70px;
@@ -114,14 +149,13 @@ html {
 }
 
 .play img {
-    width: 50%;
+    width: 40%;
     height: auto;
     transition: transform .2s ease-in;
-    transform: translateX(2px);
 }
 
 .play:hover img {
-    transform: rotate(-30deg);
+    transform: rotate(-45deg);
     transition: transform .2s ease-out;
 }
 
@@ -140,29 +174,36 @@ html {
     margin: 10px 0;
     justify-content: flex-start;
     align-items: center;
-    width: 250px;
+    width: 450px;
 }
 
 .legend__graphic {
     width: 80px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 
 .particle-bosson {
     border-radius: 50%;
     width: 5px;
     height: 5px;
     background: red;
+}
+
+.particle-bosson__wrapper {
     margin-right: 20px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
 }
 
 .particle-photon {
     border-radius: 50%;
     width: 25px;
     height: 25px;
-    margin: 5px;
     margin: auto;
 }
 
