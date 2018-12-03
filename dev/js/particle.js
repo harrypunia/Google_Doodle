@@ -42,9 +42,6 @@ var Particle = function (x, y, r) {
             return false;
         }
     }
-    //    this.resetPhysics = () => {
-    //        this.hold = false;
-    //    }
     this.boundry = function () {
         this.pos.x < this.r ? (this.pos.x = this.r, this.vel.x *= -1) : this.pos.x > (doodle.offsetWidth - this.r) ? (this.pos.x = (doodle.offsetWidth - this.r), this.vel.x *= -1) : 0;
         this.pos.y < this.r ? (this.pos.y = this.r, this.vel.y *= -1) : this.pos.y > (doodle.offsetHeight - this.r) ? (this.pos.y = (doodle.offsetHeight - this.r), this.vel.y *= -1) : 0;

@@ -195,6 +195,7 @@ const resetSketch = () => {
 
 play.addEventListener("mousedown", () => {
     explode = true;
+    play.innerHTML = '<img src="assets/img/SVG/replay.svg" />';
     legend.classList.remove('legendIn');
     play.classList.remove('playIn');
 });
