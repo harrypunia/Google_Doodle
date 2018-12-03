@@ -20,16 +20,10 @@ html {
     height: 30px;
     left: 160px;
     top: 70px;
-    background: white;
     overflow: hidden;
     transition: width .8s ease;
     cursor: pointer;
     z-index: 10000;
-}
-
-.banner:hover {
-    background: transparent;
-    border: 1px solid white;
 }
 
 .bannerIn {
@@ -42,7 +36,14 @@ html {
     font-size: 16px;
     left: 20px;
     line-height: 30px;
-    color: black;
+    color: #bababa;
+    transition: all .2s;
+}
+
+.banner a:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+    transition: all .2s;
 }
 
 .banner:hover a {
@@ -51,8 +52,8 @@ html {
 
 .higgsField {
     position: absolute;
-    width: 70px;
-    height: 70px;
+    width: 30px;
+    height: 30px;
     transform: translate(-50%, -50%);
     animation: pulse 10s linear infinite;
 }
@@ -85,7 +86,7 @@ html {
     border-radius: 0 35px 35px 0;
     transform: translate3d(-92%, 0, 0);
     overflow: hidden;
-    z-index: 100;
+    z-index: 10000000;
     transition: transform .2s ease-in;
     color: white;
 }
