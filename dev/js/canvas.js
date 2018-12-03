@@ -17,7 +17,7 @@ var pG = [],
     pointsE = [];
 
 function preload() {
-    text = loadFont("../assets/Google/Google_Sans.otf");
+    text = loadFont("assets/Google/Google_Sans.otf");
 }
 
 function setup() {

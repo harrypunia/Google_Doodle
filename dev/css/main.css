@@ -112,7 +112,7 @@ html {
     width: 92%;
     height: 100%;
     background: #232333;
-    background-image: url('/assets/SVG/legend_pattern.svg');
+    background-image: url('../../assets/SVG/legend_pattern.svg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 90%;
@@ -236,7 +236,7 @@ html {
 }
 
 .field {
-    background: url('/assets/SVG/HiggsField.svg');
+    background: url('../../assets/SVG/HiggsField.svg') no-repeat;
     width: 50px;
     height: 50px;
     margin-right: 20px;
